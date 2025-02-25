@@ -1,8 +1,8 @@
 from textual.app import App, ComposeResult
 from textual.widgets import Header, Footer, Static, Input, Button
 from textual.containers import Vertical, Horizontal
-import random
 import time
+from math_generator import generate_question
 
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
@@ -39,19 +39,7 @@ class StopwatchApp(App):
 
     def generate_question(self) -> None:
         """Generate a new mental math question."""
-        num1 = random.randint(1, 20)
-        num2 = random.randint(1, 20)
-        self.operator = random.choice(["+", "-", "*"])
-
-        if self.operator == "+":
-            self.answer = num1 + num2
-            question_text = f"What is {num1} + {num2}?"
-        elif self.operator == "-":
-            self.answer = num1 - num2
-            question_text = f"What is {num1} - {num2}?"
-        else:
-            self.answer = num1 * num2
-            question_text = f"What is {num1} * {num2}?"
+        question_text, answer = generate_question()
 
         self.query_one("#question").update(question_text)
         self.query_one("#answer").value = ""  # Clear previous answer
