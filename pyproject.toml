@@ -1,0 +1,9 @@
+[project]
+name = "terminalmath"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "textual>=2.1.1",
+]
