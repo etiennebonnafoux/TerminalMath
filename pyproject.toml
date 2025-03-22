@@ -1,9 +1,37 @@
 [project]
 name = "terminalmath"
+authors = [{name="Bonnafoux Etienne",email="etienne.bonnafoux@laposte.net"}]
+license = "MIT"
+keywords = ["math","exercice","game","TUI"]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Environment :: Console",
+  "Topic :: Terminals",
+  "Topic :: Games/Entertainment :: Puzzle Games",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
 version = "0.1.0"
-description = "Add your description here"
+description = "Mental health app that make you practice math inside the terminal"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "textual>=2.1.1",
 ]
+
+[project.scripts]
+tmath = "src.app:main"
+
+[project.urls]
+Repository = "https://github.com/etiennebonnafoux/terminalmath"
+Issues = "https://github.com/etiennebonnafoux/TerminalMath/issues"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

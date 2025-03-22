@@ -1,6 +1,7 @@
 import random
 
-def generate_question() -> tuple[str,int]:
+
+def generate_question() -> tuple[str, int]:
     num1 = random.randint(1, 20)
     num2 = random.randint(1, 20)
     operator = random.choice(["+", "-", "*"])
